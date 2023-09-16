@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/src/fonts/SF-Pro.ttf') format('truetype');
+}
+
+.button {
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 500px;
+  gap: 6px;
+
+  color: rgba(255, 255, 255, 0.96);
+  font-feature-settings: 'clig' off, 'liga' off;
+  text-align: center;
+
+  background: linear-gradient(
+      0deg,
+      rgba(94, 94, 94, 0.18) 0%,
+      rgba(94, 94, 94, 0.18) 100%
+    ),
+    rgba(255, 255, 255, 0.06);
+  background-blend-mode: color-dodge, lighten;
+
+  &[data-platter='false'] {
+    background: none;
+  }
+
+  &:hover {
+    background: radial-gradient(
+        101.08% 100% at 50% 100%,
+        rgba(94, 94, 94, 0.14) 0%,
+        rgba(94, 94, 94, 0) 73.85%
+      ),
+      radial-gradient(
+        100.02% 100% at 50% 100%,
+        rgba(255, 255, 255, 0.07) 0%,
+        rgba(255, 255, 255, 0) 55.59%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(94, 94, 94, 0.18) 0%,
+        rgba(94, 94, 94, 0.18) 100%
+      ),
+      rgba(255, 255, 255, 0.06);
+    background-blend-mode: color-dodge, lighten, color-dodge, lighten;
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.96);
+    color: #000;
+    svg {
+      stroke: #000;
+    }
+  }
+
+  &:disabled {
+    background: linear-gradient(
+        0deg,
+        rgba(94, 94, 94, 0.07) 0%,
+        rgba(94, 94, 94, 0.07) 100%
+      ),
+      rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.1);
+    svg {
+      stroke: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  svg {
+    stroke: rgba(255, 255, 255, 0.96);
+  }
+
+  &[data-size='s'] {
+    gap: 4px;
+    height: 32px;
+    padding: 0px 12px;
+    font: normal normal 590 15px SF Pro, sans-serif;
+    line-height: 20px;
+    &[data-rounded='false'] {
+      border-radius: 8px;
+    }
+  }
+
+  &[data-size='m'] {
+    height: 44px;
+    padding: 0px 20px;
+    font: normal normal 590 17px SF Pro, sans-serif;
+    line-height: 22px;
+    &[data-rounded='false'] {
+      border-radius: 12px;
+    }
+  }
+
+  &[data-size='l'] {
+    height: 52px;
+    padding: 0px 25px;
+    font: normal normal 590 19px SF Pro, sans-serif;
+    line-height: 24px;
+    &[data-rounded='false'] {
+      border-radius: 16px;
+    }
+  }
+}
